@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         C语言中文网隐藏VIP去广告
-// @namespace    https://github.com/s757129/Tampermonkey
+// @namespace    https://github.com/s757129/Tampermonkey/blob/main/c.biancheng.net.fuck.js
 // @version      0.0.1
 // @description  * try to take over the world!
 // @author       s757129
