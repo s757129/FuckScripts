@@ -107,7 +107,7 @@
                 $('.tip-box').show();
             }
             // 显示顶栏VIP相关内容
-            $('#nav-main li a[href*="show.php"]').show();
+            $('#nav-main li a[href*="vip.biancheng.net"]').show();
             $('#topbar').show();
             $('.user-info').show();
         },
@@ -155,9 +155,9 @@
     <button type="button" id="ggnbbtn" class="button-small button-border button-rounded button-primary" style="cursor:pointer;" title="自己动手,丰衣足食!李恒道哥哥牛逼!">
     <img src="https://space.bilibili.com/favicon.ico" style="height:18px;width:18px;transform:translate(-7px,3px)" />
     油猴开发</button></div>`);
-    $('#ggnb').click(function () {
+    $('#ggnbdiv').click(function () {
         unsafeWindow.open("https://space.bilibili.com/1037793830");
-    })
+    });
     // button样式
     GM_addStyle(`
     #ggnbbtn {
@@ -165,12 +165,12 @@
     font-size: 13px; !important
     padding: 1px 10px; !important
     letter-spacing: 3px; !important
-    }`)
+    }`);
     // div偏移
     GM_addStyle(`
     #ggnbdiv {
     transform: translate(-36px,-13px)
-    }`)
+    }`);
     /* * * * * * * * * * */
 
 
