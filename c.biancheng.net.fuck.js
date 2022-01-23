@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         C语言中文网移除VIP与广告
 // @namespace    https://github.com/s757129/Tampermonkey
-// @version      0.2.1
+// @version      0.2.2
 // @description  💪 移除C语言中文网广告，支持显示与隐藏付费内容，默认隐藏 ...
 // @author       s757129
 // @include      *c.biancheng.net*
@@ -16,6 +16,7 @@
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @grant        GM_getResourceText
+// @note         2022/01/23 0.2.2 修复一些问题
 // @note         2022/01/23 0.2.1 支持显示与隐藏付费内容
 // @note         2022/01/20 0.1.0 新增和修改一些内容
 // @note         2022/01/19 0.0.2 修复一些问题
@@ -45,7 +46,7 @@
 
 
     /* * * 广告 * * */
-    GM_addStyle('#top-banner,#q2a-fudao,li a[href*="fudao.biancheng.net"],#arc-append,blockquote,#ad-arc-top,#ad-bottom-weixin,#footer{display:none; !important}');
+    GM_addStyle('#top-banner,#q2a-fudao,#product-type li a[href*="fudao"],#nav-main li a[href*="fudao"],#arc-append,blockquote,#ad-arc-top,#ad-bottom-weixin,#footer{display:none; !important}');
     // 新版首页直接跳转至旧版首页
     var localhref = unsafeWindow.location;
     if(localhref.href.indexOf('c.biancheng.net/cpp')!=-1) {
@@ -114,9 +115,10 @@
     /* * * 美化 * * */
     $('.channel-num').attr('class','channel-num button button-circle');
     GM_addStyle('.channel-num{font-weight:bold;box-shadow:rgba(15, 66, 76, 0.25) 0px 0px 8px 3px;}');
-    GM_addStyle('#tutorial-title{color:#121212;font-size:2.22em;font-weight:bold;}');
-    GM_addStyle('h1,#nav-main li,.channel-num+a,#contents dt{font-weight:bold;}');
-    GM_addStyle('#tutorial{font-size:1.18em;}');
+    GM_addStyle('#tutorial-title{color:#121212;font-size:1.99em;font-weight:bold;}');
+    GM_addStyle('h1,#product-type li,#nav-main li,.channel-num+a,#contents dt{font-weight:bold;}');
+    GM_addStyle('#product-type li,#nav-main li{font-size:1.01em;}');
+    GM_addStyle('#tutorial .t-type{font-size:1.23em;}');
     /* * * * * * * * * * */
 
 
