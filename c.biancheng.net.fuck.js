@@ -16,11 +16,11 @@
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @grant        GM_getResourceText
-// @note         2022/01/23 0.2.2 修复一些问题
-// @note         2022/01/23 0.2.1 支持显示与隐藏付费内容
-// @note         2022/01/20 0.1.0 新增和修改一些内容
-// @note         2022/01/19 0.0.2 修复一些问题
-// @note         2022/01/19 0.0.1 初版发布
+// @note         2022/01/23 1.2.1 修复了一些已知问题
+// @note         2022/01/23 1.2.0 支持显示与隐藏付费内容
+// @note         2022/01/20 1.1.0 新增了一些样式内容
+// @note         2022/01/19 1.0.1 修复了一些已知问题
+// @note         2022/01/19 1.0.0 初版发布
 // ==/UserScript==
 
 (function () {
@@ -54,7 +54,6 @@
     }
     // 阻止新建标签页
     $('a').removeAttr("target");
-    $('.pc-yes a').removeAttr("target");
     // HTML注释
     $('*').contents().each(function () {
         if(this.nodeType === Node.COMMENT_NODE) {
