@@ -17,5 +17,4 @@
     GM_addStyle('.a_f{display:none; !important}');
     GM_addStyle('.a_p{display:none; !important}');
     GM_addStyle('.mn{width:100%; height:100%; left:0; top:0; right:0; bottom: 0; margin: auto;}');
-
 })();
