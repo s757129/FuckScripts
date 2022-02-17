@@ -7,11 +7,15 @@
 // @include      http*://bbs.tampermonkey.net.cn*
 // @icon         https://bbs.tampermonkey.net.cn/favicon.ico
 // @run-at       document-start
+// @grant        unsafeWindow
 // @grant        GM_addStyle
 // ==/UserScript==
 
 (function() {
     'use strict';
+    
+    //unsafeWindow
+    unsafeWindow.GM_addStyle = GM_addStyle;
     
     //隐藏广告
     GM_addStyle('.comiis_nv_pop{display:none; !important}');
