@@ -2,7 +2,7 @@
 // @name         去他のC语言中文网
 // @namespace    https://github.com/s757129/Tampermonkey
 // @version      1.0.0
-// @description  try to take over the world!!
+// @description  屏蔽C语言中文网广告加菊部美化
 // @author       柒伍七
 // @include      http*://c.biancheng.net*
 // @include      http*://vip.biancheng.net*
@@ -21,7 +21,7 @@
     'use strict';
     
     //设置
-    var setvip = 0; //🌈设置是否显示付费内容（显示"1"，隐藏"0"）默认隐藏
+    var setvip = 0; //是否显示付费内容（显示"1"，隐藏"0"）默认隐藏
 
     //unsafeWindow
     unsafeWindow.GM_addStyle = GM_addStyle;
