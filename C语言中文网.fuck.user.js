@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         去他のC语言中文网
 // @namespace    https://github.com/s757129/Tampermonkey
-// @version      1.0.2
+// @version      1.1.0
 // @description  屏蔽C语言中文网广告加菊部美化
 // @author       柒伍七
 // @include      http*://c.biancheng.net*
