@@ -13,10 +13,8 @@
 (function() {
     'use strict';
 
-    //默认是校园卡上的学号
+    //设置
     var userid = "账号";
-    
-    //默认是身份证最后六位
     var passwd = "密码";
     
     //你有对象么？
