@@ -6,7 +6,7 @@
 // @author       柒伍七
 // @include      http*://10.10.0.76*
 // @icon         https://www.gdep.edu.cn/__local/1/78/44/67DBBD0E4AF7849771AEBA0A69A_8F5875B0_45D51.jpg?e=.jpg
-// @run-at       document-idle
+// @run-at       document-body
 // @grant        none
 // ==/UserScript==
 
