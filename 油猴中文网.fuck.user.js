@@ -17,12 +17,12 @@
     //unsafeWindow
     unsafeWindow.GM_addStyle = GM_addStyle;
     
-    //隐藏广告
-    GM_addStyle('.comiis_nv_pop{display:none; !important}');
-    GM_addStyle('.a_f{display:none; !important}');
-    GM_addStyle('.a_p{display:none; !important}');
+    //fuckStyle
+    let fuckStyle = `
+.comiis_nv_pop,.a_f,.a_p { display: none; !important }
+.mn { width: 100%;height: 100%;left: 0; top:0; right:0; bottom: 0;margin: auto; }
+    `;
     
-    //美化
-    GM_addStyle('.mn{width:100%; height:100%; left:0; top:0; right:0; bottom: 0; margin: auto;}');
-
+    GM_addStyle(fuckStyle);
+    
 })();
