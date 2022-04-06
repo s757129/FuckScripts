@@ -4,9 +4,9 @@
 // @version      1.1.0
 // @description  屏蔽C语言中文网广告加菊部美化
 // @author       柒伍七
-// @include      http*://c.biancheng.net*
-// @include      http*://m.biancheng.net*
-// @include      http*://vip.biancheng.net*
+// @include      *://c.biancheng.net*
+// @include      *://m.biancheng.net*
+// @include      *://vip.biancheng.net*
 // @icon         http://c.biancheng.net/favicon.ico
 // @require      https://unpkg.com/jquery@3.6.0/dist/jquery.js
 // @require      https://unpkg.com/sweetalert2@11.4.7/dist/sweetalert2.min.js
