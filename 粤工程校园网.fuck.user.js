@@ -14,8 +14,8 @@
     'use strict';
 
     //设置
-    var userid = "账号";
-    var passwd = "密码";
+    var userid = "账号",
+        passwd = "密码";
     
     //你有对象么？
     document.querySelector('#userid').value=userid;
