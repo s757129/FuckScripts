@@ -1,4 +1,4 @@
-# 🐵Tampermonkey
+# 🐵FuckScript
 
 >### 0. 油猴脚本开发指南教程目录
 >💪 [开始学习](https://bbs.tampermonkey.net.cn/thread-184-1-1.html)
