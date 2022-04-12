@@ -1,6 +1,6 @@
 # 🐵FuckScript
 
-> **油猴脚本开发指南教程目录**&nbsp;[**`学习`**](https://bbs.tampermonkey.net.cn/thread-184-1-1.html)
+> **油猴脚本开发指南教程目录**&nbsp;[**`去学习`**](https://bbs.tampermonkey.net.cn/thread-184-1-1.html)
 
 Script Name | Install
 --- | ---
