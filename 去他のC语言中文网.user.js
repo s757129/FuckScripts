@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         去他のC语言中文网
-// @namespace    https://github.com/s757129/Tampermonkey
-// @version      1.1.0
+// @namespace    s757129
+// @version      1.1.1
 // @description  屏蔽C语言中文网广告加菊部美化
 // @author       柒伍七
-// @include      *://c.biancheng.net*
-// @include      *://m.biancheng.net*
-// @include      *://vip.biancheng.net*
+// @match        *://c.biancheng.net/*
+// @match        *://m.biancheng.net/*
+// @match        *://vip.biancheng.net/*
 // @icon         http://c.biancheng.net/favicon.ico
 // @require      https://unpkg.com/jquery@3.6.0/dist/jquery.js
 // @require      https://unpkg.com/sweetalert2@11.4.7/dist/sweetalert2.min.js
@@ -18,27 +18,32 @@
 // @grant        GM_setValue
 // @grant        GM_getResourceText
 // @grant        GM_registerMenuCommand
+// @homepage     https://github.com/s757129/FuckScripts
+// @license      MIT
 // ==/UserScript==
-
+ 
 (function () {
     'use strict';
-
+ 
     //unsafeWindow
     unsafeWindow.GM_addStyle = GM_addStyle;
     unsafeWindow.GM_getValue = GM_getValue;
     unsafeWindow.GM_setValue = GM_setValue;
     unsafeWindow.GM_getResourceText = GM_getResourceText;
     unsafeWindow.GM_registerMenuCommand = GM_registerMenuCommand;
-
+ 
     //使用旧版首页
     var localhref = unsafeWindow.location;
     if(localhref.href.indexOf('c.biancheng.net/cpp')!=-1) {
         localhref.replace("/");
     }
-
+    if(localhref.href.indexOf('m.biancheng.net/cpp')!=-1) {
+        localhref.replace("/");
+    }
+ 
     //菜单
     let main = {
-
+ 
         //隐藏已知广告
         hidead() {
             GM_addStyle('#top-banner,#q2a-fudao,#product-type li a[href*="fudao"],#nav-main li a[href*="fudao"],#arc-append,blockquote,#ad-arc-top,#ad-bottom-weixin{display:none; !important}');
@@ -49,12 +54,12 @@
                 }
             });
         },
-
+ 
         //隐藏会员中心
         hidevip() {
             GM_addStyle('#topbar,.user-info,#nav-main li a[href*="vip.biancheng.net"]{display:none; !important}');
         },
-
+ 
         //隐藏付费内容
         hidecost() {
             $('.vip').hide();
@@ -63,12 +68,12 @@
                 $('.tip-box').hide();
             }
         },
-
+ 
         //阻止新建标签
         disabledblank() {
             $('a').removeAttr("target");
         },
-
+ 
         //还原默认样式
         revertcss() {
             //自定义样式
@@ -81,9 +86,9 @@ h1,#product-type li,#nav-main li,.channel-num+a,#contents dt{ font-weight: bold;
             //载入资源
             GM_addStyle(NewStyle);
         },
-
+ 
     };
-
+ 
     //判断配置
     if (GM_getValue('setting_hide_ad')) {
         main.hidead();
@@ -101,7 +106,7 @@ h1,#product-type li,#nav-main li,.channel-num+a,#contents dt{ font-weight: bold;
     } else {
         main.revertcss();
     };
-
+ 
     //默认配置
     let value = [{
         name: 'setting_hide_ad',
@@ -122,10 +127,10 @@ h1,#product-type li,#nav-main li,.channel-num+a,#contents dt{ font-weight: bold;
     value.forEach((v) => {
         GM_getValue(v.name) === undefined && GM_setValue(v.name, v.value);
     });
-
+ 
     //设置
     GM_registerMenuCommand('⚙️ 设置', () => {
-
+ 
         //CSS
         let SwalStyle = `
 .setting-container { z-index: 99999; !important }
@@ -139,7 +144,7 @@ h1,#product-type li,#nav-main li,.channel-num+a,#contents dt{ font-weight: bold;
 .switch-btn.switch-btn-animbg:checked { box-shadow: #dfdfdf 0 0 0 0 inset;background-color: #7066e0;transition: border-color .4s, background-color ease .4s; }
 .switch-btn.switch-btn-animbg:checked:before { transition: left .3s; }
 		`;
-
+ 
         //HTML
         let Swalhtml = `
 <label class="setting-label">隐藏已知广告<input id="hide_ad" ${GM_getValue('setting_hide_ad') ? 'checked' : ''} type="checkbox" class="switch-btn switch-btn-animbg" /></label>
@@ -148,11 +153,11 @@ h1,#product-type li,#nav-main li,.channel-num+a,#contents dt{ font-weight: bold;
 <label class="setting-label">阻止新建标签<input id="disabled_blank" ${GM_getValue('setting_disabled_blank') ? 'checked' : ''} type="checkbox" class="switch-btn switch-btn-animbg" /></label>
 <label class="setting-label">还原默认样式<input id="revert_css" ${GM_getValue('setting_revert_css') ? 'checked' : ''} type="checkbox" class="switch-btn switch-btn-animbg" /></label>
     	`;
-
+ 
         //载入资源
         GM_addStyle(GM_getResourceText('SwalCSS'));
         GM_addStyle(SwalStyle);
-
+ 
         //SweetAlert2
         Swal.fire({
             icon: 'info',
@@ -164,7 +169,7 @@ h1,#product-type li,#nav-main li,.channel-num+a,#contents dt{ font-weight: bold;
         }).then((result) => {
             result.isConfirmed && history.go(0);
         });
-
+ 
         //Checkbox
         document.getElementById('hide_ad').addEventListener('change', (e) => {
             GM_setValue('setting_hide_ad', e.target.checked);
@@ -181,7 +186,7 @@ h1,#product-type li,#nav-main li,.channel-num+a,#contents dt{ font-weight: bold;
         document.getElementById('revert_css').addEventListener('change', (e) => {
             GM_setValue('setting_revert_css', e.target.checked);
         });
-
+ 
     });
-
+ 
 })();
